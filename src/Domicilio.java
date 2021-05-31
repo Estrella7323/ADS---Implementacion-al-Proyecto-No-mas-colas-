@@ -20,15 +20,6 @@ public class Domicilio {
 		this.setNumero(numero);
 		
 		
-		/*
-		Scanner sc = new Scanner(System.in);
-		String calle , numero , dist;
-		System.out.println("Ingrese calle , numero y distrito");
-		this.calle = sc.next();
-		this.numero = sc.next();
-		this.distrito = sc.next();
-	
-		*/
 	}
 
 	public String getNumero() {

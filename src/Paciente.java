@@ -6,11 +6,16 @@ public class Paciente implements Comparable<Paciente>{
 	private int edad;
 	private int dni;
 	private Domicilio direccion;
-	public Person(String nombre, String apellido, int edad) {
+	private Date Fechaatencion;
+	
+
+	
+	public Paciente(String nombre, String apellido, int edad ,int dni) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
+		this.direccion = new Domicilio();
 		
 	}
 	public String getNombre() {
@@ -41,6 +46,7 @@ public class Paciente implements Comparable<Paciente>{
 		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";
 	}
 	@Override
+	//ejemplo de uso de compareTo con edad
 	public int compareTo(Paciente pa1){
 		if (this.edad >pa1.getEdad())//
 			return 1;
