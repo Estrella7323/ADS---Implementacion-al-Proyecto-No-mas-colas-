@@ -5,35 +5,35 @@ import java.util.Calendar;
 public class Test {
 
     public static void main(String[] args) throws ParseException, ExceptionIsEmpty {
-        // TODO Auto-generated method stub
-        Queue<String> q = new LinkedQueue<String>();
-        /*Queue<String> g = new ArrayQueue<String>(2);
-        Queue<String> a = new ArrayQueue<String>(2);
-        Queue<String> b = new ArrayQueue<String>(2);*/
+// TODO Auto-generated method stub
+        Queue<Integer> q = new LinkedQueue<Integer>();
+        //Queue<String> g = new ArrayQueue<String>(2);
+        //Queue<String> a = new ArrayQueue<String>(2);
+        //Queue<String> b = new ArrayQueue<String>(2);
         try {
-        q.enqueue("1");
-        q.enqueue("2");
-        q.enqueue("3");
-        q.enqueue("4");
-        q.enqueue("5");
-		System.out.println(q);
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        q.enqueue(4);
+        q.enqueue(5);
+	q.enqueue(6);
+        System.out.println(q);
         System.out.println(q.isEmpty());
         //a.enqueue("hola");
-
 
         q.back();
         System.out.println("\n");
         q.front();
 
         System.out.println(q.isEmpty());
-        System.out.println("otro");
+        System.out.println("intento 1");
 
 
     }
     catch(ExceptionIsEmpty x) {
         System.out.println(x.getMessage());
 
-    }   	
+    }
         System.out.println("Demostracion de la clase LinkedQueue con la clase persona");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar fechaAtencion = Calendar.getInstance();
