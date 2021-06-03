@@ -55,9 +55,9 @@ public abstract class Person {
 	}
 
 	@Override
-	public String toString() {		
-		return "Person [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", dni=" + dni + "]";
-	}
+	public String toString() {
+        	return "Datos generales:" + nombre + " " + apellido + " Edad->" + edad + " Dni ->" + dni + "";
+    	}
 	
 	public int compareTo(Person p1){
 		if (this.edad >p1.getEdad())//
@@ -67,13 +67,4 @@ public abstract class Person {
 		return 0;
 	}
 }
-	
-	
-	/*
-	public String toString(){
-		
-		return "Name="+this.name+"::Gender="+this.gender;
-	}
-*/
-
 
