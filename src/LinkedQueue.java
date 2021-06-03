@@ -34,20 +34,47 @@ public class LinkedQueue<E> implements Queue<E> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+		if (this.front==null){
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public E front() throws ExceptionIsEmpty {
-		// TODO Auto-generated method stub
+		if (this.front==null){
+			System.out.print("no hay valor inicial");
+			return null;
+		}
+		Node<E> aux= this.front;
+		
+		/*while (aux.getNext().getNext()!=null){
+			aux=aux.getNext();
+		}*/
+		aux.setNext(null);
+		System.out.print(aux.getData());
 		return null;
+		
+		
 	}
 
 	@Override
 	public E back() throws ExceptionIsEmpty {
-		// TODO Auto-generated method stub
+		if (this.front==null){
+			System.out.print("esta vacio");
+			return null;
+		}
+		Node<E> res= this.back;
+		Node<E> aux=this.front;
+		
+		while (aux.getNext().getNext()!=null){
+			aux=aux.getNext();
+		}
+		aux.setNext(null);
+		System.out.print(res.getData());
 		return null;
+			
+		
 	}
 
 }

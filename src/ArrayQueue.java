@@ -39,6 +39,7 @@ public class ArrayQueue<E> implements Queue<E> {
 		
 	}
 	public E front() throws ExceptionIsEmpty{
+		//prueba git
 		return null;
 		
 	}

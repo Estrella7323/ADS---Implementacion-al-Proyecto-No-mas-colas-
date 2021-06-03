@@ -1,57 +1,64 @@
 
-public class Paciente implements Comparable<Paciente>{
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+public class Paciente  extends Person implements Comparable<Paciente> {
 	
-	private String nombre;
-	private String apellido;
-	private int edad;
-	private int dni;
+	private int id;
 	private Domicilio direccion;
-	private Date Fechaatencion;
+	private Hora Horallegada;
+	private Calendar fechaAtencion;
 	
-
-	
-	public Paciente(String nombre, String apellido, int edad ,int dni) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.edad = edad;
+	public Paciente(int id, String nombre,String apellido,int edad ,int dni , Domicilio direccion ,Hora Horallegada,Calendar fechaAtencion) {
+		super(nombre , apellido ,edad ,dni);
 		this.direccion = new Domicilio();
+		this.Horallegada = new Hora ();
+		this.fechaAtencion = fechaAtencion;
 		
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public int getEdad() {
-		return edad;
-	}
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
 	
-	public int edadMax(){
-		return 0;
+	public int getId() {
+		return id;
 	}
-	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public Domicilio getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(Domicilio direccion) {
+		this.direccion = direccion;
+	}
+	public Calendar getFechaAtencion() {
+		return fechaAtencion;
+	}
+	public void setFechaAtencion(Calendar fechaAtencion) {
+		this.fechaAtencion = fechaAtencion;
+	}
+
+	public Hora getHorallegada() {
+		return Horallegada;
+	}
+
+	public void setHorallegada(Hora horallegada) {
+		Horallegada = horallegada;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		return "Paciente : [id=" + id + super.toString() + 
+				", Direccion=" + this.direccion + "Hora de llegada\t; " + this.Horallegada+"\n"+
+				"fechaAtencion=" + sdf.format(this.fechaAtencion.getTime()) + "]";
 	}
+
 	@Override
-	//ejemplo de uso de compareTo con edad
-	public int compareTo(Paciente pa1){
-		if (this.edad >pa1.getEdad())//
-			return 1;
-		if (this.edad <pa1.getEdad())
-			return -1;
+	public int compareTo(Paciente o) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 
