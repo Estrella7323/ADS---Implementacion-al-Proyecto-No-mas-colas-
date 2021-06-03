@@ -76,5 +76,12 @@ public class LinkedQueue<E> implements Queue<E> {
 			
 		
 	}
+	public String toString() {
+        String str ="";
+        Node<E> aux = this.front;
+        for(int i = 0;aux != null;aux = aux.getNext(),i++)
+            str += aux.getData()+"\n";
+        return str;
+    }
 
 }
