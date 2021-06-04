@@ -10,26 +10,26 @@ public class Hora {
         try {
             System.out.println("Ingrese la hora: ");
             this.horas = Integer.parseInt(sc.next());
-            if (this.horas <=24 && this.horas>0 ){
+            if (this.horas <= 23 && this.horas >=0 ){
                 System.out.println("Hora Registrada");
             }else {
                 throw new Exception("Error");
             }
         }catch (Exception e){
-            System.err.println("Ingresa un número válido entre 0 y 24");
+            System.err.println("Ingresa un número válido entre 0 y 23");
             this.horas = Integer.parseInt(sc.next());
         }
 
         try {
             System.out.println("Ingrese los minutos");
             this.minutos = Integer.parseInt(sc.next());
-            if (this.minutos <=60 && this.minutos>0 ){
+            if (this.minutos <= 59 && this.minutos >=0 ){
                 System.out.println("minutos Registrada");
             }else {
                 throw new Exception("Error");
             }
         }catch (Exception e){
-            System.err.println("Ingresa un número válido entre 0 y 60");
+            System.err.println("Ingresa un número válido entre 0 y 59");
             this.minutos = Integer.parseInt(sc.next());
         }
     }
@@ -59,7 +59,4 @@ public class Hora {
     public String toString() {
         return  this.horas + ":" + this.minutos;
     }
-
-
-
 }
