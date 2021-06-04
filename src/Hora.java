@@ -6,7 +6,7 @@ public class Hora {
     private String horas;
     public Hora() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la hora ( hora minutos(");
+        System.out.println("Ingrese la hora de atencion:");
         this.minutos = sc.next();
         this.horas = sc.next();
     }
