@@ -2,39 +2,62 @@ import java.util.Scanner;
 
 public class Hora {
 
-    private String minutos;
-    private String horas;
+    private int minutos;
+    private int horas;
     public Hora() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la hora de atencion:");
-        this.minutos = sc.next();
-        this.horas = sc.next();
+        System.out.println("Ingrese la hora de atención:");
+        try {
+            System.out.println("Ingrese la hora: ");
+            this.horas = Integer.parseInt(sc.next());
+            if (this.horas <=24 && this.horas>0 ){
+                System.out.println("Hora Registrada");
+            }else {
+                throw new Exception("Error");
+            }
+        }catch (Exception e){
+            System.err.println("Ingresa un número válido entre 0 y 24");
+            this.horas = Integer.parseInt(sc.next());
+        }
+
+        try {
+            System.out.println("Ingrese los minutos");
+            this.minutos = Integer.parseInt(sc.next());
+            if (this.minutos <=60 && this.minutos>0 ){
+                System.out.println("minutos Registrada");
+            }else {
+                throw new Exception("Error");
+            }
+        }catch (Exception e){
+            System.err.println("Ingresa un número válido entre 0 y 60");
+            this.minutos = Integer.parseInt(sc.next());
+        }
     }
 
-    public Hora(String horas, String minutos ) {
+    public Hora(int horas, int minutos ) {
         this.setHoras(horas);
         this.setMinutos(minutos);
 
     }
 
-    public String getHoras() {
+    public int getHoras() {
         return horas;
     }
 
-    public void setHoras(String horas) {
+    public void setHoras(int horas) {
         this.horas = horas;
     }
 
-    public String getMinutos() {
+    public int getMinutos() {
         return minutos;
     }
 
-    public void setMinutos(String minutos) {
+    public void setMinutos(int minutos) {
         this.minutos = minutos;
     }
 
     public String toString() {
-        return "Hora: " + this.horas + ":" + this.minutos;
+        return  this.horas + ":" + this.minutos;
     }
 
 
