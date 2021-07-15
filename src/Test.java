@@ -74,5 +74,47 @@ public class Test {
         System.out.println("**********************************************************************************************************************************");
     
         q1.front();
+        
+        System.out.println("\n");
+        System.out.println("Centros de salud");
+        Domicilio direccion4 = new Domicilio("Castillo","80","Alto Selva Alegre");
+        CentroSalud p4 = new CentroSalud(3178020,"Farmacos Axelander","Farmacia", direccion4);
+        System.out.println(p4);
+        
+        Domicilio direccion5 = new Domicilio("Melgar","80","Mariano Melgar");
+        CentroSalud p5 = new CentroSalud(3178030,"Hospital Viscarra","Hospital", direccion5);
+        System.out.println(p5);
+        
+        Domicilio direccion6 = new Domicilio("LuisManuel","80","Hunter");
+        CentroSalud p6 = new CentroSalud(3178040,"Clinica Holguino","Clinica", direccion6);
+        System.out.println(p6);
+
+        Domicilio direccion7 = new Domicilio("Luren","101","Alto Selva Alegre");
+        CentroSalud p7 = new CentroSalud(3178050,"Quispe Asociados","Farmacia", direccion7);
+        System.out.println(p7);
+        
+        Domicilio direccion8 = new Domicilio("Calle Lima","202","Miraflores");
+        CentroSalud p8 = new CentroSalud(3178060,"Alcafarma","Farmacia", direccion8);
+        System.out.println(p8);
+        
+		GraphLink<String> g= new GraphLink<String>();
+		
+		g.insertVertex(p4.getNombre());
+		g.insertVertex(p5.getNombre());
+		g.insertVertex(p6.getNombre());
+		g.insertVertex(p7.getNombre());
+		g.insertVertex(p8.getNombre());
+		
+		g.insertEdgeWeight(p4.getNombre(), p5.getNombre(),10);
+		g.insertEdgeWeight(p6.getNombre(), p7.getNombre(),15);
+		g.insertEdgeWeight(p5.getNombre(), p7.getNombre(),6);
+		g.insertEdgeWeight(p8.getNombre(), p6.getNombre(),10);
+		g.insertEdgeWeight(p7.getNombre(), p4.getNombre(),5);
+		g.insertEdgeWeight(p8.getNombre(), p4.getNombre(),6);
+		g.insertEdgeWeight(p5.getNombre(), p6.getNombre(),8);
+		g.insertEdgeWeight(p7.getNombre(), p8.getNombre(),4);
+		
+		System.out.println("Grafo farmacias:\n"+g);
+        
     }}
 
