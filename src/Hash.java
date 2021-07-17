@@ -26,8 +26,8 @@ public class Hash<E extends Comparable<E>> {
     private int functionHash(int key) {
         return key % m;
     }
-    
-        private int linearProbing(int buildHash, int key) {
+
+    private int linearProbing(int buildHash, int key) {
 
         int posInit = buildHash;
 
@@ -61,4 +61,30 @@ public class Hash<E extends Comparable<E>> {
             table.set(buildHash, aux);
         }
     }
-}    
+
+    public E search(int key) {//Tiene como fin regresar una encriptación
+        E answer = null;
+        for (int i = 0; i < table.size(); i++) {
+            if (table.get(i).marca == 1 && table.get(i).reg.getKey() == key) {
+                answer = table.get(i).reg.value;
+                break;
+            }
+        }//POr ahora solo se agregó el valor
+
+        return answer;
+    }
+
+    public String toString() {
+        String s="D.Real\tD.Hash\tRegister\n";
+        int i = 0;
+        for (Element item : table) {
+            s+= (i++) + "--->\t";
+            if (item.marca == 1)
+                s += functionHash(item.reg.key) + "\t" + item.reg+ "\t \n";
+            else
+                s += "empty\n";
+        }
+        return "\t" + s;
+    }
+
+}
